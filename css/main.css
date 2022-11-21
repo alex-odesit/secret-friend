@@ -47,6 +47,10 @@ body{
     border-radius: 20px;
 }
 
+.form{
+    transition: all 1s ease;
+}
+
 .form-wrapper__title{
     margin-bottom: 30px;
 }
@@ -187,7 +191,7 @@ body{
 .result{
     display: none;
     opacity: 0;
-    transition: all 2s ease;
+    transition: all 1s ease;
     position: absolute;
     left: 0;
     bottom: 70px;
@@ -197,10 +201,38 @@ body{
 }
 
 .resul__more-information{
+    display: none;
+    opacity: 0;
+    transition: all 2s ease;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    height: 15%;
+    overflow: hidden;
+    width: 380px;
     font-family: "Arial";
-    font-size: 15px;
+    text-align: center;
 }
 
+.resul__more-information_show{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    font-family: 'Arial';
+    transition: all 2s ease;
+}
+
+.resul__more-information_hide{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    font-family: 'Arial';
+    transition: all 2s ease;
+}
 
 
 .visibilityHidden{
@@ -217,6 +249,10 @@ body{
 
 .opacityShow{
     opacity: 1;
+}
+
+.heightMax{
+    height: 95%;
 }
 
 
