@@ -3,9 +3,9 @@ const result = document.getElementById('result');
 let sender = document.getElementById('sender');
 let receiver = document.getElementById('receiver');
 
-// let test = window.btoa('alex');
-// console.log(test)
-// console.log(window.atob('QWxleA=='))
+let test = window.btoa('alex');
+console.log(test)
+console.log(window.atob('QWxleA=='))
 
 receiveBtn.addEventListener('click', receiveReceiver)
 
