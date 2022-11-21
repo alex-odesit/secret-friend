@@ -212,3 +212,16 @@ body{
 .opacityShow{
     opacity: 1;
 }
+
+
+.input-cont.red label::after {
+    border-bottom: 3px solid red;
+}
+
+.input-cont.red input:focus + .label-name .content-name, .input-cont.red input:valid + .label-name .content-name {
+    color: red;
+}
+
+.input-cont.red label::after {
+    border-bottom: 3px solid red;
+}
