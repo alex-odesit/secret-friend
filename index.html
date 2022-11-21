@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" и type="text/css" href="./css/main.css" >
+    <title>Secret Friend</title>
+</head>
+<body>
+    <div class="background">
+        <img src="./img/background.png" class="background__img" alt="">
+        <div class="background__shadow"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="box">
+            <div class="form">
+                <div class="form-wrapper">
+                    <h1 class="form-wrapper__title">
+                        Введи пароль, друг мой)
+                    </h1>
+                    <div class="form-wrapper__item">
+                        <div class="input-cont dark">
+                            <input type="text" name="name" autocomplete="off" required>
+                            <label class="label-name">
+                                <span class="content-name">
+                                    Password
+                                </span>
+                            </label>
+                        </div>
+                        <div class="button-2" id="receive_btn">
+                            <div class="eff-2"></div>
+                            <a href="#"> Узнать своего друга </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result" id="result">
+                <div class="result__box">
+                    <div class="result__prize">
+                        <span id="sender" class="sender"></span> -> дарит -> <span id="receiver" class="receiver"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="./js/main.js" ></script>
+</body>
+</html>
