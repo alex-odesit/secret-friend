@@ -45,7 +45,6 @@ body{
     color: #bbbbbb;
     padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 0 5px #000;
 }
 
 .form-wrapper__title{
@@ -196,6 +195,13 @@ body{
     justify-content: center;
     font-size: 30px;
 }
+
+.resul__more-information{
+    font-family: "Arial";
+    font-size: 15px;
+}
+
+
 
 .visibilityHidden{
     visibility: hidden;
