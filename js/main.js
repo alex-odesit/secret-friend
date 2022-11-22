@@ -20,6 +20,7 @@ receiveBtn.addEventListener('click', e =>{
     receiveReceiver(e, 'click');
 });
 passwordInput.addEventListener('keydown', e =>{
+    if(passwordLS) return
     receiveReceiver(e, 'keydown')
 });
 

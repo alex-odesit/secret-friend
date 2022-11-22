@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
 
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-thumb {
+    width: 0;
+}
+
+/* Scrollbar for Firefox */
+@supports (scrollbar-color: red blue) {
+    * {
+        width: 0;
+    }
+}
+
+
 html{
     height: 100%;
 }
@@ -213,6 +233,7 @@ body{
     width: 310px;
     font-family: "Arial";
     text-align: center;
+    overflow: scroll;
 }
 
 .resul__more-information_item{
