@@ -34,7 +34,7 @@ async function receiveReceiver(e, type){
     moreInformation.classList.add('d-block');
     sender.textContent = player.gives;
     receiver.textContent = player.receives.split('|').map(num => String.fromCharCode(num)).join('');
-    moreInformation.textContent = player.wish || 'Пока нету особых предпочтений'
+    moreInformation.textContent = player.givesWish || 'Пока нету особых предпочтений'
     if(player.wish){
         moreInformationShow.addEventListener('click', showDescription);
         moreInformation.addEventListener('click', showDescription);
