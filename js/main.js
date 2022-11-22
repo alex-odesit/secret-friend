@@ -10,6 +10,12 @@ const moreInformationHide = document.getElementById('moreInformationHide');
 const mainBox = document.getElementById('form');
 const PromisePlayers = fetch('./js/result.json').then(res => res.json());
 
+const passwordLS = localStorage.getItem('password');
+if(passwordLS){
+    passwordInput.value = passwordLS;
+    receiveReceiver();
+}
+
 receiveBtn.addEventListener('click', e =>{
     receiveReceiver(e, 'click');
 });
@@ -20,20 +26,22 @@ passwordInput.addEventListener('keydown', e =>{
 async function receiveReceiver(e, type){
     if(!passwordInput.value || type === 'keydown' && e.code !== 'Enter') return;
     let players = await PromisePlayers;
-    let player = players[passwordInput.value];
+    let password = passwordInput.value.trim().toLowerCase();
+    let player = players[password];
     if(!player){
         input_wrapper.classList.add('red')
         return;
     }
-
     input_wrapper.classList.remove('red');
     receiveBtn.classList.add('opacityHide');
     result.classList.add('d-flex');
     moreInformation.classList.add('d-block');
     sender.textContent = player.gives;
     receiver.textContent = player.receives.split('|').map(num => String.fromCharCode(num)).join('');
-    moreInformation.textContent = player.givesWish || 'Пока нету особых предпочтений'
-    if(player.givesWish){
+    const wish = Object.values(players).find(item => item.gives === receiver.textContent).givesWish;
+    moreInformation.textContent = wish|| 'Пока нету особых предпочтений';
+
+    if(wish){
         moreInformationShow.addEventListener('click', showDescription);
         moreInformation.addEventListener('click', showDescription);
         moreInformationHide.addEventListener('click', hideDescription);
@@ -47,6 +55,8 @@ async function receiveReceiver(e, type){
         result.classList.add('opacityShow');
         moreInformationShow.classList.add('opacityShow');
     }, 1300)
+
+    localStorage.setItem('password', password)
 }
 
 function showDescription(){
