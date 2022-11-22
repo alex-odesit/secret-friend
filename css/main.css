@@ -195,9 +195,10 @@ body{
     position: absolute;
     left: 0;
     bottom: 70px;
+    text-align: center;
     width: 100%;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .resul__more-information{
@@ -207,33 +208,26 @@ body{
     position: absolute;
     bottom: 0;
     left: 50px;
-    height: 15%;
+    height: 16%;
     overflow: hidden;
-    width: 380px;
+    width: 310px;
     font-family: "Arial";
     text-align: center;
 }
 
-.resul__more-information_show{
+.resul__more-information_item{
     display: none;
     opacity: 0;
     position: absolute;
-    bottom: 5px;
-    right: 20px;
+    bottom: 1px;
+    right: 3px;
     font-family: 'Arial';
     transition: all 2s ease;
+    padding: 2px 10px;
+    background: #1f062a;
+    border-radius: 10px;
+    font-size: 12px;
 }
-
-.resul__more-information_hide{
-    display: none;
-    opacity: 0;
-    position: absolute;
-    bottom: 5px;
-    right: 20px;
-    font-family: 'Arial';
-    transition: all 2s ease;
-}
-
 
 .visibilityHidden{
     visibility: hidden;
@@ -276,6 +270,13 @@ body{
     .box{
         max-width: 85%;
     }
+    .resul__more-information{
+        font-size: 14px;
+        left: 20px;
+    }
+    .result{
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 430px) {
@@ -287,5 +288,8 @@ body{
     }
     .input-cont{
         width: 90%;
+    }
+    .resul__more-information{
+        width: 270px;
     }
 }
