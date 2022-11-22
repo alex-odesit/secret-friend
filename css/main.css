@@ -12,22 +12,29 @@ body{
     font-family: 'Lobster';
 }
 
-.background__img{
-    height: 100%;
-    filter: blur(10px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.background__shadow{
-    position: absolute;
-    z-index: -1;
+.background{
     width: 100%;
     height: 100%;
-    top: 0;
+    position: absolute;
+    z-index: -1;
     left: 0;
+    top: 0;
+    background: url('../img/background.jpg') 50% 50%/cover no-repeat;
+    filter: blur(10px);
+}
+
+/*.background__img{*/
+/*    height: 100%;*/
+/*    filter: blur(10px);*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: -1;*/
+/*}*/
+
+.background__shadow{
+    width: 100%;
+    height: 100%;
     background-color: rgba(0,0,0,0.6);
 }
 
@@ -266,4 +273,8 @@ body{
 
 .input-cont.red label::after {
     border-bottom: 3px solid red;
+}
+
+@media (max-width: 600px) {
+
 }
