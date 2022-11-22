@@ -10,8 +10,6 @@ const moreInformationHide = document.getElementById('moreInformationHide');
 const mainBox = document.getElementById('form');
 const PromisePlayers = fetch('./js/result.json').then(res => res.json());
 
-console.log('1057|1072|1096|1072|32|1044|1084|1080|1090|1088|1080|1077|1074'.split('|').map(num => String.fromCharCode(num)).join(''))
-
 receiveBtn.addEventListener('click', e =>{
     receiveReceiver(e, 'click');
 });
