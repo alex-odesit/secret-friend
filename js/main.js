@@ -35,7 +35,7 @@ async function receiveReceiver(e, type){
     sender.textContent = player.gives;
     receiver.textContent = player.receives.split('|').map(num => String.fromCharCode(num)).join('');
     moreInformation.textContent = player.givesWish || 'Пока нету особых предпочтений'
-    if(player.wish){
+    if(player.givesWish){
         moreInformationShow.addEventListener('click', showDescription);
         moreInformation.addEventListener('click', showDescription);
         moreInformationHide.addEventListener('click', hideDescription);
