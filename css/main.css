@@ -289,10 +289,16 @@ body{
     left: 0;
     text-align: center;
     width: 100%;
-    color: white;
+    color: #858585;
     background-color: rgba(0, 0, 0, 0.75);
     font-family: Arial;
     font-size: 12px;
+    font-weight: 100;
+}
+
+.authors__item{
+    font-weight: 600;
+    color: #ababab;
 }
 
 
