@@ -283,6 +283,18 @@ body{
     border-bottom: 3px solid red;
 }
 
+.authors{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-family: Arial;
+    font-size: 12px;
+}
+
 
 @media (max-width: 500px) {
     .form-wrapper__title{
