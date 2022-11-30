@@ -10,11 +10,11 @@ const moreInformationHide = document.getElementById('moreInformationHide');
 const mainBox = document.getElementById('form');
 const PromisePlayers = fetch('./js/result.json').then(res => res.json());
 
-const passwordLS = localStorage.getItem('password');
-if(passwordLS){
-    passwordInput.value = passwordLS;
-    receiveReceiver();
-}
+// const passwordLS = localStorage.getItem('password');
+// if(passwordLS){
+//     passwordInput.value = passwordLS;
+//     receiveReceiver();
+// }
 
 receiveBtn.addEventListener('click', e =>{
     receiveReceiver(e, 'click');
