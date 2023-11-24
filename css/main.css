@@ -248,6 +248,7 @@ body{
     border-radius: 10px;
     font-size: 12px;
     background: rgba(155, 3, 148, 0.56);
+    cursor: pointer;
 }
 
 .visibilityHidden{

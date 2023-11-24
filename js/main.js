@@ -23,7 +23,7 @@ async function receiveReceiver(e, type){
     let password = passwordInput.value.trim().toLowerCase();
     let finalPlayer = null;
     Object.values(players).forEach(groupPlayers =>{
-        JSON.parse(groupPlayers.players).forEach(player => {
+        JSON.parse(decryptSubstitution(groupPlayers.players)).forEach(player => {
             if(password === player.password) finalPlayer = player
         })
     })
@@ -83,4 +83,15 @@ function hideDescription(){
     moreInformationShow.classList.remove('d-none');
     moreInformation.removeEventListener('click', hideDescription);
     moreInformation.addEventListener('click', showDescription);
+}
+
+function decryptSubstitution(str) {
+    // Пример дешифра подстановки
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const encryptedChars = 'xyzabcdefghijklmnopqrstuvw';
+
+    return str.replace(/[a-z]/g, (char) => {
+        const index = encryptedChars.indexOf(char);
+        return index >= 0 ? alphabet[index] : char;
+    });
 }
