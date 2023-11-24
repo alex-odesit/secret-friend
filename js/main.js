@@ -8,28 +8,27 @@ const moreInformation = document.getElementById('moreInformation');
 const moreInformationShow = document.getElementById('moreInformationShow');
 const moreInformationHide = document.getElementById('moreInformationHide');
 const mainBox = document.getElementById('form');
-const PromisePlayers = fetch('./js/result.json').then(res => res.json());
-
-const passwordLS = localStorage.getItem('password');
-if(passwordLS){
-    passwordInput.value = passwordLS;
-    receiveReceiver();
-}
 
 receiveBtn.addEventListener('click', e =>{
     receiveReceiver(e, 'click');
 });
 passwordInput.addEventListener('keydown', e =>{
-    if(passwordLS) return
     receiveReceiver(e, 'keydown')
 });
 
 async function receiveReceiver(e, type){
-    if(!passwordInput.value || type === 'keydown' && e.code !== 'Enter') return;
-    let players = await PromisePlayers;
+    if(type === 'keydown' && e.code !== 'Enter') return;
+    let players = await fetch('https://secret-friend-5c88b-default-rtdb.firebaseio.com/users.json');
+     players = await players.json();
     let password = passwordInput.value.trim().toLowerCase();
-    let player = players[password];
-    if(!player){
+    let finalPlayer = null;
+    Object.values(players).forEach(groupPlayers =>{
+        JSON.parse(groupPlayers.players).forEach(player => {
+            if(password === player.password) finalPlayer = player
+        })
+    })
+
+    if(!finalPlayer){
         input_wrapper.classList.add('red')
         return;
     }
@@ -37,9 +36,9 @@ async function receiveReceiver(e, type){
     receiveBtn.classList.add('opacityHide');
     result.classList.add('d-flex');
     moreInformation.classList.add('d-block');
-    sender.textContent = player.gives;
-    receiver.textContent = player.receives.split('|').map(num => String.fromCharCode(num)).join('');
-    const wish = Object.values(players).find(item => item.gives === receiver.textContent).givesWish;
+    sender.textContent = finalPlayer.fullName;
+    receiver.textContent = finalPlayer.targetPlayerName;
+    const wish = finalPlayer.targetWish;
     moreInformation.textContent = wish|| 'Пока нету особых предпочтений';
 
     if(wish){
@@ -56,8 +55,6 @@ async function receiveReceiver(e, type){
         result.classList.add('opacityShow');
         moreInformationShow.classList.add('opacityShow');
     }, 1300)
-
-    localStorage.setItem('password', password)
 }
 
 function showDescription(){
